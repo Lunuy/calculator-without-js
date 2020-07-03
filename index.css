@@ -1,0 +1,105 @@
+.out {
+    overflow: hidden;
+    height: 50px;
+    width: 100px;
+    display: inline-block;
+    text-align:center;
+}
+.out > pre {
+    line-height: 50px;
+    font-size: 50px;
+    margin: 0;
+    transition: margin-top 0.2s;
+    display:inline-block;
+
+    background: linear-gradient(to bottom, red,orange,yellow,green,blue,indigo,violet)
+}
+.out > pre > p {
+    margin: 0;
+    mix-blend-mode: difference;
+    float: left;
+    width: 100%;
+    color:white;
+}
+.result {
+    display: flex;
+    align-items: center;
+}
+
+#a_1 + div {
+    --a_1: 0;
+}
+#a_1:checked + div {
+    --a_1: 8;
+}
+#a_2 + div {
+    --a_2: 0;
+}
+#a_2:checked + div {
+    --a_2: 4;
+}
+#a_3 + div {
+    --a_3: 0;
+}
+#a_3:checked + div {
+    --a_3: 2;
+}
+#a_4 + div {
+    --a_4: 0;
+}
+#a_4:checked + div {
+    --a_4: 1;
+}
+
+#calc_a {
+    --a: calc(var(--a_1) + var(--a_2) + var(--a_3) + var(--a_4));
+}
+#pre_a {
+    margin-top: calc(var(--a) * -50px);
+}
+
+#b_1 + div {
+    --b_1: 0;
+}
+#b_1:checked + div {
+    --b_1: 8;
+}
+#b_2 + div {
+    --b_2: 0;
+}
+#b_2:checked + div {
+    --b_2: 4;
+}
+#b_3 + div {
+    --b_3: 0;
+}
+#b_3:checked + div {
+    --b_3: 2;
+}
+#b_4 + div {
+    --b_4: 0;
+}
+#b_4:checked + div {
+    --b_4: 1;
+}
+
+#calc_b {
+    --b: calc(var(--b_1) + var(--b_2) + var(--b_3) + var(--b_4));
+}
+#pre_b {
+    margin-top: calc(var(--b) * -50px);
+}
+
+#plus {
+    margin-top: calc((var(--a) + var(--b)) * -50px);
+} 
+#minus {
+    margin-top: calc((var(--a) - var(--b) + 15) * -50px);
+    background: linear-gradient(to bottom,blue,indigo,violet, red,orange,yellow,green)
+} 
+#multiply {
+    margin-top: calc((var(--a) * var(--b)) * -50px);
+} 
+#divide {
+    margin-top: calc((var(--a) / var(--b)) * -50px);
+} 
